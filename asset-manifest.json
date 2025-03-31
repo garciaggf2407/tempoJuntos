@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/tempoJuntos/static/css/main.32f8adcc.css",
+    "main.js": "/tempoJuntos/static/js/main.fd8eda86.js",
+    "static/media/foto1.jpg": "/tempoJuntos/static/media/foto1.1db67b220ca67dc76464.jpg",
+    "static/media/foto3.jpg": "/tempoJuntos/static/media/foto3.08248977e24966d72a25.jpg",
+    "static/media/foto2.jpg": "/tempoJuntos/static/media/foto2.7c934a7996ae58feb684.jpg",
+    "index.html": "/tempoJuntos/index.html",
+    "main.32f8adcc.css.map": "/tempoJuntos/static/css/main.32f8adcc.css.map",
+    "main.fd8eda86.js.map": "/tempoJuntos/static/js/main.fd8eda86.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.32f8adcc.css",
+    "static/js/main.fd8eda86.js"
+  ]
+}
