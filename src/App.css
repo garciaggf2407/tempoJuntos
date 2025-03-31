@@ -36,3 +36,311 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  background-color: #1a1a1a;
+  background-image: linear-gradient(45deg, #1a1a1a 0%, #1f2d2d 100%);
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.card {
+  background-color: rgba(51, 51, 51, 0.9);
+  background-image: linear-gradient(135deg, rgba(51, 51, 51, 0.9) 0%, rgba(31, 45, 45, 0.95) 100%);
+  width: 92%;
+  max-width: 1100px;
+  height: calc(100vh - 6rem);
+  max-height: 600px;
+  border-radius: 28px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.card-content {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 1rem;
+}
+
+.content-top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: #87CEEB;
+  text-shadow: 0 0 10px rgba(135, 206, 235, 0.3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.content-bottom {
+  padding-top: 2rem;
+}
+
+.time-unit {
+  background: rgba(68, 68, 68, 0.6);
+  border-radius: 15px;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(135, 206, 235, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.time-unit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(135, 206, 235, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.time-unit:hover {
+  transform: translateY(-5px);
+  border-color: rgba(135, 206, 235, 0.3);
+  box-shadow: 0 8px 25px rgba(135, 206, 235, 0.2);
+}
+
+.time-unit:hover::before {
+  transform: translateX(100%);
+}
+
+.time-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #87CEEB;
+  text-shadow: 0 0 10px rgba(135, 206, 235, 0.3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.time-label {
+  font-size: 0.85rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.reference-date {
+  font-size: 1.2rem;
+  color: #87CEEB;
+  font-style: italic;
+  margin-top: 1rem;
+  text-shadow: 0 0 5px rgba(135, 206, 235, 0.3);
+  padding: 0 1rem;
+}
+
+/* Animação dos corações */
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.heart {
+  position: fixed;
+  color: #ff69b4;
+  animation: floatHeart 3s ease-in-out forwards;
+  z-index: 1000;
+  pointer-events: none;
+  text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.small-button {
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  background-color: rgba(135, 206, 235, 0.1);
+  color: #87CEEB;
+  border: 1px solid rgba(135, 206, 235, 0.4);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0;
+  text-shadow: 0 0 3px rgba(135, 206, 235, 0.2);
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(135, 206, 235, 0.1);
+  backdrop-filter: blur(4px);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 10;
+}
+
+.small-button:hover {
+  background-color: rgba(135, 206, 235, 0.2);
+  border-color: rgba(135, 206, 235, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(135, 206, 235, 0.2);
+}
+
+.carousel-container {
+  flex: 1.5;
+  position: relative;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: rgba(68, 68, 68, 0.4);
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(135, 206, 235, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Estilização dos botões de navegação do Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #87CEEB !important;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 50%;
+  border: 2px solid rgba(135, 206, 235, 0.3);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(135, 206, 235, 0.2);
+  border-color: rgba(135, 206, 235, 0.6);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 16px !important;
+}
+
+.swiper-pagination-bullet {
+  background: #87CEEB !important;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #87CEEB !important;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Media query para iPhone 13 e dispositivos móveis similares */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 2rem 0;
+  }
+
+  .card {
+    height: calc(100vh - 4rem);
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .card-content {
+    padding: 0.5rem;
+  }
+
+  .content-top {
+    margin-bottom: 1rem;
+  }
+
+  .content-bottom {
+    padding-top: 1rem;
+  }
+
+  .time-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .carousel-container {
+    height: 45%;
+  }
+}
+
+/* Media query para telas muito pequenas */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 1.5rem 0;
+  }
+
+  .card {
+    height: calc(100vh - 3rem);
+    padding: 1rem;
+    width: 94%;
+  }
+
+  .card-content {
+    padding: 0.3rem;
+  }
+
+  .content-top {
+    margin-bottom: 0.8rem;
+  }
+
+  .content-bottom {
+    padding-top: 0.8rem;
+  }
+
+  .carousel-container {
+    height: 40%;
+  }
+}
