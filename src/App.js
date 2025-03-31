@@ -105,6 +105,10 @@ function App() {
 
   return (
     <div className="container">
+      <video autoPlay muted loop className="video-background">
+        <source src={process.env.PUBLIC_URL + '/videos/background.mp4'} type="video/mp4" />
+        Seu navegador não suporta vídeos.
+      </video>
       {hearts.map(heart => (
         <div
           key={heart.id}
